@@ -55,8 +55,6 @@ class CourseViewModel: ObservableObject {
             print(course)
             print(courseData)
             }
-        
-
     }
     
     func testCase(course: CourseModel) {

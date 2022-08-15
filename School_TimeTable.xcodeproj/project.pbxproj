@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E7155DD228A6B0A10006610C /* courseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7155DD128A6B0A10006610C /* courseModel.swift */; };
+		E7155DD228A6B0A10006610C /* CourseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7155DD128A6B0A10006610C /* CourseModel.swift */; };
 		E7155DD428A6B1590006610C /* CourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7155DD328A6B1590006610C /* CourseView.swift */; };
 		E7155DD628A6B33A0006610C /* CourseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7155DD528A6B33A0006610C /* CourseViewModel.swift */; };
 		E7947C3728A02297007A8DB7 /* School_TimeTableApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7947C3628A02297007A8DB7 /* School_TimeTableApp.swift */; };
@@ -18,7 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E7155DD128A6B0A10006610C /* courseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = courseModel.swift; sourceTree = "<group>"; };
+		E7155DD128A6B0A10006610C /* CourseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseModel.swift; sourceTree = "<group>"; };
 		E7155DD328A6B1590006610C /* CourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseView.swift; sourceTree = "<group>"; };
 		E7155DD528A6B33A0006610C /* CourseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewModel.swift; sourceTree = "<group>"; };
 		E7947C3328A02297007A8DB7 /* School_TimeTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = School_TimeTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +40,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E763B1B028AA3E5F003EFF3D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E7155DD128A6B0A10006610C /* CourseModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E763B1B128AA3E70003EFF3D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E7155DD528A6B33A0006610C /* CourseViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E763B1B328AA3E8C003EFF3D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E7947C3828A02297007A8DB7 /* ContentView.swift */,
+				E7155DD328A6B1590006610C /* CourseView.swift */,
+				E79663C928A970080045AE44 /* EditingSheetView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		E7947C2A28A02297007A8DB7 = {
 			isa = PBXGroup;
 			children = (
@@ -60,11 +86,9 @@
 			isa = PBXGroup;
 			children = (
 				E7947C3628A02297007A8DB7 /* School_TimeTableApp.swift */,
-				E7155DD128A6B0A10006610C /* courseModel.swift */,
-				E7947C3828A02297007A8DB7 /* ContentView.swift */,
-				E7155DD328A6B1590006610C /* CourseView.swift */,
-				E79663C928A970080045AE44 /* EditingSheetView.swift */,
-				E7155DD528A6B33A0006610C /* CourseViewModel.swift */,
+				E763B1B028AA3E5F003EFF3D /* Model */,
+				E763B1B328AA3E8C003EFF3D /* View */,
+				E763B1B128AA3E70003EFF3D /* ViewModel */,
 				E7947C3A28A02298007A8DB7 /* Assets.xcassets */,
 				E7947C3C28A02298007A8DB7 /* Preview Content */,
 			);
@@ -149,7 +173,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7155DD228A6B0A10006610C /* courseModel.swift in Sources */,
+				E7155DD228A6B0A10006610C /* CourseModel.swift in Sources */,
 				E7947C3928A02297007A8DB7 /* ContentView.swift in Sources */,
 				E7155DD628A6B33A0006610C /* CourseViewModel.swift in Sources */,
 				E79663CA28A970080045AE44 /* EditingSheetView.swift in Sources */,
