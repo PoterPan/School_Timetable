@@ -14,10 +14,8 @@ struct CourseView: View {
             Rectangle()
                 .aspectRatio(1, contentMode: .fit)
                 .foregroundColor(.teal)
-                
             
             VStack {
-//                Text(course.id)
                 Text(course.name)
                 Text(course.place)
             }

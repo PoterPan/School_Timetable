@@ -26,12 +26,7 @@ struct ContentView: View {
                     .font(.title)
                     .fontWeight(.bold)
                     .padding()
-                
-                Text(courseVM.courseData[0].name)
-//                ForEach(courseVM.courseData) { course in
-//                    Text(course.id)
-//                }
-                
+                                
                 HStack {
                     ForEach(titles, id: \.self) { title in
                         Text(title)
@@ -46,15 +41,11 @@ struct ContentView: View {
                     LazyVGrid(columns: cols, spacing: 20) {
                         ForEach(courseVM.courseData) { course in
                             Button {
-//                                courseVM.testCase(course: course)
-//                                courseVM.editCourse(course: course, newName: "123", newPlace: "123")
                                 print("selected course: \(course.id)")
                                 isPresentingCourse = course
                             } label: {
                                 CourseView(course: course)
                             }
-                            
-
 
                         }
                         .sheet(item: $isPresentingCourse) { course in

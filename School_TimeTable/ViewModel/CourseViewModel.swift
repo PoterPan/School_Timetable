@@ -10,22 +10,16 @@ import SwiftUI
 
 class CourseViewModel: ObservableObject {
     @Published var courseData: [CourseModel] = []
-//    {
-        // didSet 屬性觀察器（Property observers)
-//        didSet {
-//            saveData()
-//        }
-//    }
-    
-//    let dataKey: String = "course_list"
     
     init() {
+        getData()
+    }
+    
+    func getData() {
         for _ in (1...40) {
             let newCourse = CourseModel(name: "未設定", place: "未輸入")
             courseData.append(newCourse)
         }
-        
-        
     }
     
     func editCourse(course: CourseModel, newName: String, newPlace: String) {
@@ -50,12 +44,5 @@ class CourseViewModel: ObservableObject {
             courseData[index] = CourseModel(name: "已編輯", place: "已編輯")
         }
     }
-    
-//    func saveData() {
-//        if let encodedData = try? JSONEncoder().encode(courseData) {
-//            UserDefaults.standard.set(encodedData, forKey: dataKey)
-//        }
-//    }
-    
     
 }
