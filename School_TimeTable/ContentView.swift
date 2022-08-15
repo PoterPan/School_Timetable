@@ -27,7 +27,7 @@ struct ContentView: View {
                     .fontWeight(.bold)
                     .padding()
                 
-                Text(courseVM.courseData[0].name)
+//                Text(courseVM.courseData[0].name)
 //                ForEach(courseVM.courseData) { course in
 //                    Text(course.id)
 //                }
@@ -65,6 +65,25 @@ struct ContentView: View {
                     
                 }
                 
+            }
+            // FAB
+            VStack {
+                Spacer()
+                HStack {
+                    Spacer()
+                    Button {
+                        courseVM.resetData()
+                    } label: {
+                        Image(systemName: "exclamationmark.arrow.triangle.2.circlepath")
+                            .font(.largeTitle)
+                            .frame(width: 50, height: 50)
+                            .background(Color.accentColor)
+                            .clipShape(Circle())
+                            .foregroundColor(.white)
+                            .padding(20)
+                    }
+
+                }
             }
             
         }
