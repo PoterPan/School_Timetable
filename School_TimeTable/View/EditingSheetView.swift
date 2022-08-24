@@ -27,9 +27,11 @@ struct EditingSheetView: View {
                     .ignoresSafeArea()
                 VStack{
                     Text("目前課程\(course.id)")
+                        .font(.callout)
+                        .foregroundColor(.secondary)
                     HStack {
                         Text("該節課名：")
-                        TextField("", text: $newName)
+                        TextField(course.name, text: $newName)
                             .frame(maxWidth: .infinity, minHeight: 35)
                             .background(Color(UIColor.secondarySystemBackground))
                             .cornerRadius(10)
@@ -37,7 +39,7 @@ struct EditingSheetView: View {
                     }
                     HStack {
                         Text("上課地點：")
-                        TextField("", text: $newPlace)
+                        TextField(course.place, text: $newPlace)
                             .frame(maxWidth: .infinity, minHeight: 35)
                             .background(Color(UIColor.secondarySystemBackground))
                             .cornerRadius(10)
