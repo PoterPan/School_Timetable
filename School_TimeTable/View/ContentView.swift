@@ -15,8 +15,6 @@ struct ContentView: View {
     @EnvironmentObject var courseVM: CourseViewModel
     @State private var isPresentingCourse: CourseModel? = nil
 
-
-    
     var body: some View {
         ZStack {
             Color.mint

@@ -19,6 +19,8 @@ struct CourseView: View {
                 Text(course.name)
                 Text(course.place)
             }
+            .lineLimit(1)
+            .minimumScaleFactor(0.5)
             .foregroundColor(.black)
         }
 
@@ -27,7 +29,7 @@ struct CourseView: View {
 
 struct CourseView_Previews: PreviewProvider {
     static var previews: some View {
-        CourseView(course: CourseModel.init(name: "123", place: "123"))
+        CourseView(course: CourseModel.init(name: "測試", place: "123"))
             .previewLayout(.sizeThatFits)
         ContentView()
             .environmentObject(CourseViewModel())

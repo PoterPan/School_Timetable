@@ -59,6 +59,7 @@ struct EditingSheetView: View {
 
                 }
             }
+            .onTapGesture { isFocused = false }
             .navigationTitle("編輯課程")
         }
         
