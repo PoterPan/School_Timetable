@@ -10,8 +10,7 @@ import SwiftUI
 struct EditingSheetView: View {
     @Environment(\.dismiss) var dismiss
     
-    @EnvironmentObject var courseVM: CourseViewModel
-
+    @EnvironmentObject var editingSheetVM: EditingSheetViewModel
     
     let course : CourseModel
     
@@ -48,7 +47,7 @@ struct EditingSheetView: View {
                     }
                     Button("Save") {
                         print("ClickedSave")
-                        courseVM.editCourse(course: course, newName: newName, newPlace: newPlace)
+                        editingSheetVM.editCourse(course: course, newName: newName, newPlace: newPlace)
                         dismiss()
                     }
                     .font(.title)
@@ -59,6 +58,7 @@ struct EditingSheetView: View {
 
                 }
             }
+            .onTapGesture { isFocused = false }
             .navigationTitle("編輯課程")
         }
     }

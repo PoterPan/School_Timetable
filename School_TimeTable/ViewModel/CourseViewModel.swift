@@ -23,7 +23,7 @@ class CourseViewModel: ObservableObject {
         getItems()
     }
     
-    func getItems() {
+    public func getItems() {
         guard
             let data = UserDefaults.standard.data(forKey: dataKey),
             let savedItems = try? JSONDecoder().decode([CourseModel].self, from: data)
@@ -35,35 +35,34 @@ class CourseViewModel: ObservableObject {
                 self.courseData.append(newCourse)
             }
             return
-            
         }
 
         self.courseData = savedItems
-        print("data loaded")
+//        print("data loaded")
     }
     
-    func editCourse(course: CourseModel, newName: String, newPlace: String) {
-        print("target course: \(course.id)")
-        if let index = courseData.firstIndex(where: { $0.id == course.id } ) {
-            courseData[index] = CourseModel(name: newName, place: newPlace)
-            print("Index: \(index)")
-            print("Saved")
-            print("New id: \(courseData[index].id)")
-        }
-        else {
-            print("Data Error")
-            print(course)
-            print(courseData)
-            }
-    }
+//    func editCourse(course: CourseModel, newName: String, newPlace: String) {
+//        print("target course: \(course.id)")
+//        if let index = courseData.firstIndex(where: { $0.id == course.id } ) {
+//            courseData[index] = CourseModel(name: newName, place: newPlace)
+//            print("Index: \(index)")
+//            print("Saved")
+//            print("New id: \(courseData[index].id)")
+//        }
+//        else {
+//            print("Data Error")
+//            print(course)
+//            print(courseData)
+//            }
+//    }
     
-    func testCase(course: CourseModel) {
-        if let index = courseData.firstIndex(where: { $0.id == course.id } ) {
-            courseData[index] = CourseModel(name: "已編輯", place: "已編輯")
-        }
-    }
+//    func testCase(course: CourseModel) {
+//        if let index = courseData.firstIndex(where: { $0.id == course.id } ) {
+//            courseData[index] = CourseModel(name: "已編輯", place: "已編輯")
+//        }
+//    }
     
-    func saveData() {
+    public func saveData() {
         if let encodedData = try? JSONEncoder().encode(courseData) {
             UserDefaults.standard.set(encodedData, forKey: dataKey)
         }

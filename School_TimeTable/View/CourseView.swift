@@ -19,6 +19,8 @@ struct CourseView: View {
                 Text(course.name)
                 Text(course.place)
             }
+            .lineLimit(1)
+            .minimumScaleFactor(0.5)
             .foregroundColor(.black)
         }
 
