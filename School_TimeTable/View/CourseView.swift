@@ -16,6 +16,7 @@ struct CourseView: View {
                 .foregroundColor(.teal)
             
             VStack {
+                Text(course.id)
                 Text(course.name)
                 Text(course.place)
             }

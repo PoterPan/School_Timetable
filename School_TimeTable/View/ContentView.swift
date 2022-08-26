@@ -14,17 +14,18 @@ struct ContentView: View {
     
     @EnvironmentObject var courseVM: CourseViewModel
     @State private var isPresentingCourse: CourseModel? = nil
-
+    
     var body: some View {
         ZStack {
             Color.mint
                 .ignoresSafeArea()
+            
             VStack {
                 Text("我的課表")
                     .font(.title)
                     .fontWeight(.bold)
                     .padding()
-
+                
                 HStack {
                     ForEach(titles, id: \.self) { title in
                         Text(title)
@@ -54,24 +55,16 @@ struct ContentView: View {
                 }
                 
             }
-            // FAB
+            
+            //MENU
             VStack {
-                Spacer()
                 HStack {
                     Spacer()
-                    Button {
-                        courseVM.resetData()
-                    } label: {
-                        Image(systemName: "exclamationmark.arrow.triangle.2.circlepath")
-                            .font(.largeTitle)
-                            .frame(width: 50, height: 50)
-                            .background(Color.accentColor)
-                            .clipShape(Circle())
-                            .foregroundColor(.white)
-                            .padding(20)
-                    }
-
+                    Menu("Options")
+                    { Button("Reset", action: courseVM.resetData) }
+                        .padding()
                 }
+                Spacer()
             }
             
         }
