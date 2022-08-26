@@ -10,12 +10,10 @@ import Foundation
 class EditingSheetViewModel: ObservableObject {
     
     @Published var courseData: [CourseModel] = []
-    {
-        // didSet 屬性觀察器（Property observers)
-        didSet {
-            saveData()
-        }
+    {   // didSet 屬性觀察器（Property observers)
+        didSet { saveData() }
     }
+    
     let dataKey: String = "course_list"
     
 

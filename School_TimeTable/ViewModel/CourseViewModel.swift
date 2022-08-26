@@ -10,11 +10,8 @@ import SwiftUI
 
 class CourseViewModel: ObservableObject {
     @Published var courseData: [CourseModel] = []
-    {
-        // didSet 屬性觀察器（Property observers)
-        didSet {
-            saveData()
-        }
+    {   // didSet 屬性觀察器（Property observers)
+        didSet { saveData() }
     }
     
     let dataKey: String = "course_list"
@@ -40,27 +37,6 @@ class CourseViewModel: ObservableObject {
         self.courseData = savedItems
 //        print("data loaded")
     }
-    
-//    func editCourse(course: CourseModel, newName: String, newPlace: String) {
-//        print("target course: \(course.id)")
-//        if let index = courseData.firstIndex(where: { $0.id == course.id } ) {
-//            courseData[index] = CourseModel(name: newName, place: newPlace)
-//            print("Index: \(index)")
-//            print("Saved")
-//            print("New id: \(courseData[index].id)")
-//        }
-//        else {
-//            print("Data Error")
-//            print(course)
-//            print(courseData)
-//            }
-//    }
-    
-//    func testCase(course: CourseModel) {
-//        if let index = courseData.firstIndex(where: { $0.id == course.id } ) {
-//            courseData[index] = CourseModel(name: "已編輯", place: "已編輯")
-//        }
-//    }
     
     public func saveData() {
         if let encodedData = try? JSONEncoder().encode(courseData) {
