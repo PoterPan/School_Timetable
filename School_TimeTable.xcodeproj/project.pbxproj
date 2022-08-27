@@ -11,6 +11,8 @@
 		E7155DD428A6B1590006610C /* CourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7155DD328A6B1590006610C /* CourseView.swift */; };
 		E7155DD628A6B33A0006610C /* CourseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7155DD528A6B33A0006610C /* CourseViewModel.swift */; };
 		E725C30F28B7D5EA0019662D /* EditingSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E725C30E28B7D5EA0019662D /* EditingSheetViewModel.swift */; };
+		E769DC3428B903CD001E1029 /* CourseContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E769DC3228B903CD001E1029 /* CourseContainer.xcdatamodeld */; };
+		E769DC3828B919F6001E1029 /* CourseDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E769DC3728B919F6001E1029 /* CourseDataService.swift */; };
 		E7947C3728A02297007A8DB7 /* School_TimeTableApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7947C3628A02297007A8DB7 /* School_TimeTableApp.swift */; };
 		E7947C3928A02297007A8DB7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7947C3828A02297007A8DB7 /* ContentView.swift */; };
 		E7947C3B28A02298007A8DB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7947C3A28A02298007A8DB7 /* Assets.xcassets */; };
@@ -23,6 +25,8 @@
 		E7155DD328A6B1590006610C /* CourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseView.swift; sourceTree = "<group>"; };
 		E7155DD528A6B33A0006610C /* CourseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewModel.swift; sourceTree = "<group>"; };
 		E725C30E28B7D5EA0019662D /* EditingSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingSheetViewModel.swift; sourceTree = "<group>"; };
+		E769DC3328B903CD001E1029 /* CourseContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CourseContainer.xcdatamodel; sourceTree = "<group>"; };
+		E769DC3728B919F6001E1029 /* CourseDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDataService.swift; sourceTree = "<group>"; };
 		E7947C3328A02297007A8DB7 /* School_TimeTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = School_TimeTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7947C3628A02297007A8DB7 /* School_TimeTableApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School_TimeTableApp.swift; sourceTree = "<group>"; };
 		E7947C3828A02297007A8DB7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -46,6 +50,7 @@
 			isa = PBXGroup;
 			children = (
 				E7155DD128A6B0A10006610C /* CourseModel.swift */,
+				E769DC3228B903CD001E1029 /* CourseContainer.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -69,6 +74,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		E769DC3928B919FA001E1029 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E769DC3728B919F6001E1029 /* CourseDataService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		E7947C2A28A02297007A8DB7 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				E7947C3628A02297007A8DB7 /* School_TimeTableApp.swift */,
+				E769DC3928B919FA001E1029 /* Services */,
 				E763B1B028AA3E5F003EFF3D /* Model */,
 				E763B1B328AA3E8C003EFF3D /* View */,
 				E763B1B128AA3E70003EFF3D /* ViewModel */,
@@ -176,10 +190,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E769DC3428B903CD001E1029 /* CourseContainer.xcdatamodeld in Sources */,
 				E7155DD228A6B0A10006610C /* CourseModel.swift in Sources */,
 				E725C30F28B7D5EA0019662D /* EditingSheetViewModel.swift in Sources */,
 				E7947C3928A02297007A8DB7 /* ContentView.swift in Sources */,
 				E7155DD628A6B33A0006610C /* CourseViewModel.swift in Sources */,
+				E769DC3828B919F6001E1029 /* CourseDataService.swift in Sources */,
 				E79663CA28A970080045AE44 /* EditingSheetView.swift in Sources */,
 				E7947C3728A02297007A8DB7 /* School_TimeTableApp.swift in Sources */,
 				E7155DD428A6B1590006610C /* CourseView.swift in Sources */,
@@ -383,6 +399,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E769DC3228B903CD001E1029 /* CourseContainer.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E769DC3328B903CD001E1029 /* CourseContainer.xcdatamodel */,
+			);
+			currentVersion = E769DC3328B903CD001E1029 /* CourseContainer.xcdatamodel */;
+			path = CourseContainer.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E7947C2B28A02297007A8DB7 /* Project object */;
 }

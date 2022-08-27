@@ -13,7 +13,7 @@ struct ContentView: View {
     let cols = Array(repeating: GridItem(), count: 5)
     
     @EnvironmentObject var courseVM: CourseViewModel
-    @State private var isPresentingCourse: CourseModel? = nil
+    @State private var isPresentingCourse: CourseEntity? = nil
     
     var body: some View {
         ZStack {
@@ -25,7 +25,6 @@ struct ContentView: View {
                     .font(.title)
                     .fontWeight(.bold)
                     .padding()
-                
                 HStack {
                     ForEach(titles, id: \.self) { title in
                         Text(title)
@@ -40,15 +39,17 @@ struct ContentView: View {
                     LazyVGrid(columns: cols, spacing: 20) {
                         ForEach(courseVM.courseData) { course in
                             Button {
-                                print("selected course: \(course.id)")
+                                print("selected course: \(course.id!)")
+                                print(course)
                                 isPresentingCourse = course
                             } label: {
                                 CourseView(course: course)
                             }
                         }
-                        .sheet(item: $isPresentingCourse, onDismiss: courseVM.getItems, content: { course in
+                        .sheet(item: $isPresentingCourse)
+                        { course in
                             EditingSheetView(course: course)
-                        })
+                        }
                     }
                     .padding()
                     
@@ -61,7 +62,12 @@ struct ContentView: View {
                 HStack {
                     Spacer()
                     Menu("Options")
-                    { Button("Reset", action: courseVM.resetData) }
+                    {
+                        Button("Reset", action: courseVM.resetData)
+                        Button("Get New Data", action: {
+                            print("new data: \(courseVM.courseData)")
+                        })
+                    }
                         .padding()
                 }
                 Spacer()

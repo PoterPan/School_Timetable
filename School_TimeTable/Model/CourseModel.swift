@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct CourseModel: Identifiable, Codable {
-    var id = UUID().uuidString
-    var name: String
-    var place: String
-}
+//struct CourseModel: Identifiable, Codable {
+//    var id = UUID().uuidString
+//    var name: String
+//    var place: String
+//}

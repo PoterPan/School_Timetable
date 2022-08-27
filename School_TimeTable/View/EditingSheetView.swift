@@ -12,7 +12,7 @@ struct EditingSheetView: View {
     
     @EnvironmentObject var editingSheetVM: EditingSheetViewModel
     
-    let course : CourseModel
+    let course : CourseEntity
     
     @State private var newName : String = ""
     @State private var newPlace : String = ""
@@ -26,12 +26,12 @@ struct EditingSheetView: View {
                     .ignoresSafeArea()
                 VStack{
                     // For debug
-                    Text("目前課程\(course.id)")
+                    Text("目前課程\(course.id!)")
                         .font(.callout)
                         .foregroundColor(.secondary)
                     HStack {
                         Text("該節課名：")
-                        TextField(course.name, text: $newName)
+                        TextField(course.name ?? "無資料", text: $newName)
                             .frame(maxWidth: .infinity, minHeight: 35)
                             .background(Color(UIColor.secondarySystemBackground))
                             .cornerRadius(10)
@@ -39,7 +39,7 @@ struct EditingSheetView: View {
                     }
                     HStack {
                         Text("上課地點：")
-                        TextField(course.place, text: $newPlace)
+                        TextField(course.place ?? "無資料", text: $newPlace)
                             .frame(maxWidth: .infinity, minHeight: 35)
                             .background(Color(UIColor.secondarySystemBackground))
                             .cornerRadius(10)
@@ -64,10 +64,10 @@ struct EditingSheetView: View {
     }
 }
 
-struct EditingSheetView_Previews: PreviewProvider {
-    static var previews: some View {
-        EditingSheetView(course: CourseModel.init(name: "123", place: "123"))
-            .environmentObject(CourseViewModel())
-
-    }
-}
+//struct EditingSheetView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        EditingSheetView(course: CourseModel.init(name: "123", place: "123"))
+//            .environmentObject(CourseViewModel())
+//
+//    }
+//}
