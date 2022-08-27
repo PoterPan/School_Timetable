@@ -32,6 +32,7 @@ final class EditingSheetViewModel: ObservableObject {
     
     func editCourse(course: CourseModel, newName: String, newPlace: String) {
         print("target course: \(course.id)")
+        loadData()
         if let index = courseData.firstIndex(where: { $0.id == course.id } ) {
             courseData[index] = CourseModel(name: newName, place: newPlace)
         }
