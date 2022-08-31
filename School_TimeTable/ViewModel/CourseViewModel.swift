@@ -17,21 +17,20 @@ class CourseViewModel: ObservableObject {
     let dataKey: String = "course_list"
     
     init() {
-        getItems()
+        loadData()
     }
     
-    func getItems() {
+    func loadData() {
         guard
             let data = UserDefaults.standard.data(forKey: dataKey),
-            let savedItems = try? JSONDecoder().decode([CourseModel].self, from: data)
+            let savedData = try? JSONDecoder().decode([CourseModel].self, from: data)
         else {
             print("Fetching data failed")
             createDefault()
             return
         }
 
-        self.courseData = savedItems
-//        print("data loaded")
+        self.courseData = savedData
     }
     
     private func createDefault() {
@@ -39,6 +38,13 @@ class CourseViewModel: ObservableObject {
         for _ in (1...40) {
             let newCourse = CourseModel(name: "未設定", place: "未輸入")
             self.courseData.append(newCourse)
+        }
+    }
+    
+    func editCourse(course: CourseModel, newName: String, newPlace: String) {
+        print("target course: \(course.id)")
+        if let index = courseData.firstIndex(where: { $0.id == course.id } ) {
+            courseData[index] = CourseModel(name: newName, place: newPlace)
         }
     }
     
@@ -50,10 +56,8 @@ class CourseViewModel: ObservableObject {
     
     func resetData() {
         courseData.removeAll()
-        print(UserDefaults.standard.data(forKey: dataKey))
         UserDefaults.standard.removeObject(forKey: dataKey)
-        print(UserDefaults.standard.data(forKey: dataKey))
-        getItems()
+        loadData()
     }
     
     

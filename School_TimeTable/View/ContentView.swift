@@ -46,9 +46,9 @@ struct ContentView: View {
                                 CourseView(course: course)
                             }
                         }
-                        .sheet(item: $isPresentingCourse, onDismiss: courseVM.getItems, content: { course in
+                        .sheet(item: $isPresentingCourse) { course in
                             EditingSheetView(course: course)
-                        })
+                        }
                     }
                     .padding()
                     

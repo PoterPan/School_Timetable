@@ -10,8 +10,8 @@ import SwiftUI
 struct EditingSheetView: View {
     @Environment(\.dismiss) var dismiss
     
-    @EnvironmentObject var editingSheetVM: EditingSheetViewModel
-    
+    @EnvironmentObject var courseVM: CourseViewModel
+
     let course : CourseModel
     
     @State private var newName : String = ""
@@ -47,7 +47,7 @@ struct EditingSheetView: View {
                     }
                     Button("Save") {
                         print("ClickedSave")
-                        editingSheetVM.editCourse(course: course, newName: newName, newPlace: newPlace)
+                        courseVM.editCourse(course: course, newName: newName, newPlace: newPlace)
                         dismiss()
                     }
                     .font(.title)

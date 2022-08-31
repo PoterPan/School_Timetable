@@ -10,13 +10,11 @@ import SwiftUI
 @main
 struct School_TimeTableApp: App {
     @StateObject var courseVM: CourseViewModel = CourseViewModel()
-    @StateObject var editingSheetVM: EditingSheetViewModel = EditingSheetViewModel()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(courseVM)
-                .environmentObject(editingSheetVM)
         }
     }
 }
